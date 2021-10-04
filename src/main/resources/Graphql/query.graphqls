@@ -1,0 +1,42 @@
+type ClaimJsonData {
+    ClaimId: Int!
+    ProviderName: String!
+    ProvidersOrganization: String!
+    ProvidersLastOrganization: String!
+    ProviderTotalWorkExp: String!
+    LicenseNumber: String!
+    PatientName: String!
+    PatientPostalCode: String!
+    GenderCode: String!
+    Services: [String]!
+    ClaimDate: String!
+    ClaimAmount: Int!
+    ClaimStatus: String!
+}
+
+type PatientData {
+    PatientName: String!
+    GenderCode: String!
+    PatientPostalCode: String!
+}
+
+type ProviderData {
+    ProviderName: String!
+    ProvidersOrganization: String!
+    ProvidersLastOrganization: String!
+    LicenseNumber: String!
+    WorkExperience: String!
+}
+type ClaimsData {
+    ClaimId: Int!
+    ProviderName: String!
+    PatientName: String!
+    ClaimAmount: Int!
+    ClaimStatus: String!
+}
+
+type Query {
+    getAllClaims(ClaimId: String) : [ClaimJsonData]
+    getAllPatients : [ClaimJsonData]
+    getAllProviders : [ClaimJsonData]
+}
